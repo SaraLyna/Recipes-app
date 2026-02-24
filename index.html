@@ -4,116 +4,181 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Viens dans mon assiette | Blog de recettes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'Poppins', sans-serif;
-      background: #fafafa;
-      color: #333;
+      background: linear-gradient(180deg, #fff7f2 0%, #ffffff 100%);
+      color: #2d2d2d;
       line-height: 1.6;
     }
 
     header {
       background: linear-gradient(135deg, #ff7a18, #ffb347);
       color: white;
-      padding: 40px 20px;
+      padding: 60px 20px 50px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -60px;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background: white;
+      border-radius: 50% 50% 0 0;
     }
 
     header h1 {
-      font-size: 2.2rem;
+      font-size: 2.6rem;
       margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
-    header p {
-      opacity: 0.9;
-    }
+    header p { opacity: 0.95; }
 
     nav {
-      background: white;
-      padding: 12px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      padding: 14px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
     nav a {
-      margin: 0 12px;
+      margin: 0 14px;
       text-decoration: none;
       color: #ff7a18;
-      font-weight: 500;
+      font-weight: 600;
+      position: relative;
     }
 
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #ff7a18;
+      transition: width .25s ease;
+    }
+
+    nav a:hover::after { width: 100%; }
+
     .container {
-      max-width: 1100px;
-      margin: 40px auto;
+      max-width: 1200px;
+      margin: 50px auto;
       padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      font-weight: 700;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      gap: 28px;
     }
 
     .card {
       background: white;
-      border-radius: 18px;
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.14);
     }
 
     .card img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
     }
 
-    .card-content {
-      padding: 18px;
-    }
+    .card-content { padding: 20px; }
 
     .card h3 {
       margin-bottom: 8px;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
+      font-weight: 600;
     }
 
     .card p {
       font-size: 0.9rem;
-      opacity: 0.8;
+      opacity: 0.75;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 12px;
-      padding: 8px 14px;
-      background: #ff7a18;
+      margin-top: 14px;
+      padding: 9px 16px;
+      background: linear-gradient(135deg, #ff7a18, #ffb347);
       color: white;
       border-radius: 999px;
       text-decoration: none;
       font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 6px 16px rgba(255,122,24,0.35);
+    }
+
+    /* Instagram section */
+    .instagram-box {
+      background: white;
+      border-radius: 24px;
+      padding: 30px;
+      margin-bottom: 50px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .instagram-box h2 {
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+    }
+
+    .instagram-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #e1306c;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(225,48,108,0.35);
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px;
-      background: #222;
+      padding: 35px 20px;
+      background: #1f1f1f;
       color: #aaa;
-      margin-top: 50px;
+      margin-top: 60px;
       font-size: 0.85rem;
     }
 
-    @media (max-width: 500px) {
-      header h1 { font-size: 1.6rem; }
+    @media (max-width: 520px) {
+      header h1 { font-size: 1.9rem; }
     }
   </style>
 </head>
@@ -125,40 +190,53 @@
 
   <nav>
     <a href="#">Accueil</a>
-    <a href="#">Recettes</a>
-    <a href="#">À propos</a>
-    <a href="https://www.instagram.com/viens_dans_mon_assiette" target="_blank">Instagram</a>
+    <a href="#recettes">Recettes</a>
+    <a href="#instagram">Instagram</a>
+    <a href="https://www.instagram.com/viens_dans_mon_assiette" target="_blank">Profil</a>
   </nav>
 
   <main class="container">
+
+    <!-- Instagram connection -->
+    <section id="instagram" class="instagram-box">
+      <h2>📸 Suis-moi sur Instagram</h2>
+      <p>@viens_dans_mon_assiette</p>
+
+      <!-- Instagram embed (official method) -->
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/viens_dans_mon_assiette/" data-instgrm-version="14" style="background:#FFF;border:0;margin:20px auto;max-width:540px;width:100%;"></blockquote>
+
+      <a class="instagram-btn" href="https://www.instagram.com/viens_dans_mon_assiette" target="_blank">
+        Voir le compte
+      </a>
+    </section>
+
+    <h2 id="recettes" class="section-title">✨ Dernières recettes</h2>
+
     <div class="grid">
 
-      <!-- Recette 1 -->
       <article class="card">
-        <img src="https://via.placeholder.com/400x300" alt="Recette 1">
+        <img src="https://via.placeholder.com/400x300" alt="Recette">
         <div class="card-content">
           <h3>Nom de la recette</h3>
-          <p>Petite description appétissante de ta recette publiée sur Instagram.</p>
+          <p>Remplace par une vraie recette depuis Instagram.</p>
           <a class="btn" href="#">Voir la recette</a>
         </div>
       </article>
 
-      <!-- Recette 2 -->
       <article class="card">
-        <img src="https://via.placeholder.com/400x300" alt="Recette 2">
+        <img src="https://via.placeholder.com/400x300" alt="Recette">
         <div class="card-content">
           <h3>Nom de la recette</h3>
-          <p>Ajoute ici une autre recette issue de ton compte Instagram.</p>
+          <p>Duplique cette carte pour ajouter tes plats.</p>
           <a class="btn" href="#">Voir la recette</a>
         </div>
       </article>
 
-      <!-- Recette 3 -->
       <article class="card">
-        <img src="https://via.placeholder.com/400x300" alt="Recette 3">
+        <img src="https://via.placeholder.com/400x300" alt="Recette">
         <div class="card-content">
           <h3>Nom de la recette</h3>
-          <p>Tu peux dupliquer cette carte pour ajouter autant de recettes que tu veux.</p>
+          <p>Design premium prêt pour ton blog food.</p>
           <a class="btn" href="#">Voir la recette</a>
         </div>
       </article>
@@ -167,7 +245,10 @@
   </main>
 
   <footer>
-    © 2026 — Viens dans mon assiette · Suis-moi sur Instagram @viens_dans_mon_assiette
+    © 2026 — Viens dans mon assiette · Instagram @viens_dans_mon_assiette
   </footer>
+
+  <!-- Instagram script -->
+  <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
