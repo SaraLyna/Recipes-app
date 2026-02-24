@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viens dans mon assiette | Blog de recettes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff7a18, #ffb347);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      opacity: 0.9;
+    }
+
+    nav {
+      background: white;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #ff7a18;
+      font-weight: 500;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 14px;
+      background: #ff7a18;
+      color: white;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #222;
+      color: #aaa;
+      margin-top: 50px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 500px) {
+      header h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍽️ Viens dans mon assiette</h1>
+    <p>Mes recettes gourmandes tirées d'Instagram</p>
+  </header>
+
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#">Recettes</a>
+    <a href="#">À propos</a>
+    <a href="https://www.instagram.com/viens_dans_mon_assiette" target="_blank">Instagram</a>
+  </nav>
+
+  <main class="container">
+    <div class="grid">
+
+      <!-- Recette 1 -->
+      <article class="card">
+        <img src="https://via.placeholder.com/400x300" alt="Recette 1">
+        <div class="card-content">
+          <h3>Nom de la recette</h3>
+          <p>Petite description appétissante de ta recette publiée sur Instagram.</p>
+          <a class="btn" href="#">Voir la recette</a>
+        </div>
+      </article>
+
+      <!-- Recette 2 -->
+      <article class="card">
+        <img src="https://via.placeholder.com/400x300" alt="Recette 2">
+        <div class="card-content">
+          <h3>Nom de la recette</h3>
+          <p>Ajoute ici une autre recette issue de ton compte Instagram.</p>
+          <a class="btn" href="#">Voir la recette</a>
+        </div>
+      </article>
+
+      <!-- Recette 3 -->
+      <article class="card">
+        <img src="https://via.placeholder.com/400x300" alt="Recette 3">
+        <div class="card-content">
+          <h3>Nom de la recette</h3>
+          <p>Tu peux dupliquer cette carte pour ajouter autant de recettes que tu veux.</p>
+          <a class="btn" href="#">Voir la recette</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    © 2026 — Viens dans mon assiette · Suis-moi sur Instagram @viens_dans_mon_assiette
+  </footer>
+</body>
+</html>
